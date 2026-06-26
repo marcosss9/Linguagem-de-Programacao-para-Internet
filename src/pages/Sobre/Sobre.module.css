@@ -1,0 +1,112 @@
+.pagina {
+  padding-top: 48px;
+}
+
+.cabecalho {
+  max-width: 720px;
+  margin-bottom: 50px;
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cor-secundaria);
+  margin-bottom: 10px;
+}
+
+.cabecalho h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  margin-bottom: 16px;
+}
+
+.cabecalho p {
+  font-size: 1.08rem;
+  color: var(--cor-texto-suave);
+}
+
+.bloco {
+  margin-bottom: 50px;
+}
+
+.bloco h2 {
+  font-size: 1.5rem;
+  margin-bottom: 22px;
+}
+
+.recursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.recurso {
+  padding: 24px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.recurso:hover {
+  transform: translateY(-4px);
+  border-color: var(--cor-borda-forte);
+}
+
+.recursoIcone {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.recurso h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.recurso p {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--cor-primaria-clara);
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid var(--cor-borda);
+}
+
+.destaqueCriativo {
+  padding: 36px;
+  border-radius: var(--raio);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(34, 211, 238, 0.12), transparent 50%),
+    var(--cor-superficie);
+  border: 1px solid var(--cor-borda-forte);
+  box-shadow: var(--sombra);
+}
+
+.destaqueCriativo h2 {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+  background: linear-gradient(110deg, var(--cor-primaria-clara), var(--cor-secundaria));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.destaqueCriativo p {
+  color: var(--cor-texto-suave);
+  max-width: 720px;
+  margin-bottom: 22px;
+}

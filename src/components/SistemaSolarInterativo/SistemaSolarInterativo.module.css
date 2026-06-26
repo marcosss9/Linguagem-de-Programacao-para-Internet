@@ -1,0 +1,265 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 28px;
+  align-items: center;
+}
+
+/* ---------- Palco / campo orbital ---------- */
+.palco {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.12), transparent 62%),
+    radial-gradient(circle at 50% 50%, rgba(5, 6, 15, 0.9), #04030c 75%);
+  border: 1px solid var(--cor-borda);
+  overflow: hidden;
+  /* todas as órbitas/planetas usam o centro como referência */
+  display: grid;
+  place-items: center;
+}
+
+/* O conteúdo é desenhado em uma escala fixa de 760px e encolhido para caber */
+.palco > * {
+  grid-area: 1 / 1;
+}
+
+.estrelas {
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 60px 40px, #fff, transparent),
+    radial-gradient(1px 1px at 160px 120px, #c7d2fe, transparent),
+    radial-gradient(2px 2px at 280px 80px, #fff, transparent),
+    radial-gradient(1px 1px at 360px 220px, #a5f3fc, transparent),
+    radial-gradient(1.5px 1.5px at 120px 300px, #fff, transparent),
+    radial-gradient(1px 1px at 440px 360px, #e9d5ff, transparent);
+  background-repeat: repeat;
+  background-size: 480px 420px;
+  transition: transform 0.25s ease-out;
+}
+
+/* ---------- Sol ---------- */
+.sol {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, #fff6c2, #ffb938 45%, #ff7a18 80%);
+  box-shadow: 0 0 40px 10px rgba(255, 160, 40, 0.6);
+  z-index: 5;
+  animation: pulsarSol 4s ease-in-out infinite;
+}
+
+.solBrilho {
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 180, 60, 0.35), transparent 70%);
+  animation: pulsarSol 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulsarSol {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* ---------- Órbitas ---------- */
+.orbita {
+  border-radius: 50%;
+  border: 1px solid rgba(167, 139, 250, 0.18);
+  pointer-events: none;
+  transition: border-color 0.25s ease;
+}
+
+.orbitaAtiva {
+  border-color: rgba(34, 211, 238, 0.55);
+}
+
+/* ---------- Giro (anima a translação orbital) ---------- */
+.giro {
+  position: relative;
+  border-radius: 50%;
+  animation-name: orbitar;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+}
+
+@keyframes orbitar {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Planeta ---------- */
+.planeta {
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: auto;
+  box-shadow: inset -3px -3px 8px rgba(0, 0, 0, 0.6);
+  transition: box-shadow 0.2s ease, filter 0.2s ease;
+  z-index: 4;
+}
+
+.planeta:hover {
+  filter: brightness(1.15);
+}
+
+.planetaAtivo {
+  box-shadow:
+    inset -3px -3px 8px rgba(0, 0, 0, 0.6),
+    0 0 0 3px rgba(34, 211, 238, 0.4),
+    0 0 26px 6px rgba(34, 211, 238, 0.6);
+  /* amplia o planeta ao passar o mouse (alteração visual perceptível) */
+  transform: translate(-50%, -50%) scale(2);
+  z-index: 6;
+}
+
+.anelPlaneta {
+  position: absolute;
+  inset: -30% -70%;
+  border-radius: 50%;
+  border: 3px solid rgba(224, 194, 122, 0.7);
+  border-bottom-color: rgba(224, 194, 122, 0.15);
+  transform: rotate(-20deg);
+}
+
+/* ---------- Controles de velocidade ---------- */
+.controles {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.controle {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+  background: rgba(5, 6, 15, 0.5);
+  border: 1px solid var(--cor-borda);
+  transition: all 0.18s ease;
+}
+
+.controle:hover {
+  color: var(--cor-texto);
+  border-color: var(--cor-borda-forte);
+}
+
+.controleAtivo {
+  color: #06070f;
+  background: linear-gradient(120deg, var(--cor-primaria-clara), var(--cor-secundaria));
+  border-color: transparent;
+}
+
+/* ---------- Painel de informações ---------- */
+.painel {
+  grid-row: 1 / 3;
+  grid-column: 2 / 3;
+  align-self: center;
+  min-height: 260px;
+  padding: 24px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.painelVisivel {
+  border-color: var(--cor-borda-forte);
+  box-shadow: var(--sombra-glow);
+}
+
+.painelTopo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.painelPlaneta {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: inset -4px -4px 10px rgba(0, 0, 0, 0.6);
+  flex-shrink: 0;
+}
+
+.painelTopo h3 {
+  font-size: 1.4rem;
+}
+
+.painelTipo {
+  font-size: 0.78rem;
+  color: var(--cor-secundaria);
+}
+
+.painelDados {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.painelDados li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 0.9rem;
+}
+
+.painelDados span {
+  color: var(--cor-texto-fraco);
+}
+
+.painelDica {
+  font-size: 0.85rem;
+  color: var(--cor-primaria-clara);
+  font-weight: 600;
+}
+
+.painelVazio {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  color: var(--cor-texto-suave);
+}
+
+.painelVazio span {
+  font-size: 2.6rem;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 880px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .painel {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .controles {
+    grid-column: auto;
+  }
+}

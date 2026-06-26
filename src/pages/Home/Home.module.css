@@ -1,0 +1,90 @@
+.pagina {
+  padding-bottom: 40px;
+}
+
+.secao {
+  margin-top: 70px;
+}
+
+.tituloSecao {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 36px;
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cor-secundaria);
+  margin-bottom: 10px;
+}
+
+.tituloSecao h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin-bottom: 12px;
+}
+
+.tituloSecao p {
+  color: var(--cor-texto-suave);
+}
+
+.destaques {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.destaque {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.destaque:hover {
+  transform: translateY(-4px);
+  border-color: var(--cor-borda-forte);
+}
+
+.destaquePlaneta {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: inset -5px -4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.destaque h3 {
+  font-size: 1.15rem;
+}
+
+.destaque p {
+  font-size: 0.82rem;
+  color: var(--cor-texto-fraco);
+}
+
+.seta {
+  margin-left: auto;
+  font-size: 1.4rem;
+  color: var(--cor-primaria-clara);
+  transition: transform 0.2s ease;
+}
+
+.destaque:hover .seta {
+  transform: translateX(5px);
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}

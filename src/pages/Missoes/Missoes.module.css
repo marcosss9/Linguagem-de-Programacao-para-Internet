@@ -1,0 +1,91 @@
+.pagina {
+  padding-top: 48px;
+}
+
+.cabecalho {
+  margin-bottom: 30px;
+  max-width: 660px;
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cor-secundaria);
+  margin-bottom: 10px;
+}
+
+.cabecalho h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 12px;
+}
+
+.cabecalho p {
+  color: var(--cor-texto-suave);
+}
+
+.controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-texto-suave);
+  background: rgba(5, 6, 15, 0.4);
+  border: 1px solid var(--cor-borda);
+  transition: all 0.18s ease;
+}
+
+.chip:hover {
+  color: var(--cor-texto);
+  border-color: var(--cor-borda-forte);
+}
+
+.chipAtivo {
+  color: #06070f;
+  background: linear-gradient(120deg, var(--cor-primaria-clara), var(--cor-secundaria));
+  border-color: transparent;
+}
+
+.ordenar {
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda-forte);
+  transition: background 0.18s ease;
+}
+
+.ordenar:hover {
+  background: rgba(139, 92, 246, 0.14);
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.vazio {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--cor-texto-suave);
+  border: 1px dashed var(--cor-borda-forte);
+  border-radius: var(--raio);
+}

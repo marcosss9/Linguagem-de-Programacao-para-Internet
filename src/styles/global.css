@@ -1,0 +1,152 @@
+/* ============================================================
+   NEBULA — Tema global e variáveis de design
+   ============================================================ */
+
+:root {
+  --cor-fundo: #05060f;
+  --cor-fundo-2: #0b1026;
+  --cor-superficie: rgba(20, 24, 54, 0.55);
+  --cor-superficie-solida: #11152e;
+  --cor-borda: rgba(139, 92, 246, 0.25);
+  --cor-borda-forte: rgba(139, 92, 246, 0.55);
+
+  --cor-primaria: #8b5cf6;
+  --cor-primaria-clara: #a78bfa;
+  --cor-secundaria: #22d3ee;
+  --cor-destaque: #f0abfc;
+
+  --cor-texto: #e6e8f5;
+  --cor-texto-suave: #a2a8c8;
+  --cor-texto-fraco: #6b7095;
+
+  --raio: 16px;
+  --raio-sm: 10px;
+  --sombra: 0 18px 50px rgba(2, 4, 20, 0.6);
+  --sombra-glow: 0 0 28px rgba(139, 92, 246, 0.45);
+
+  --fonte: 'Segoe UI', 'Trebuchet MS', system-ui, -apple-system, sans-serif;
+  --largura-max: 1180px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fonte);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  background-image:
+    radial-gradient(circle at 15% 12%, rgba(139, 92, 246, 0.18), transparent 42%),
+    radial-gradient(circle at 85% 8%, rgba(34, 211, 238, 0.14), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(240, 171, 252, 0.1), transparent 55%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Campo de estrelas global gerado por CSS */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+    radial-gradient(1px 1px at 120px 80px, #cdd3ff, transparent),
+    radial-gradient(2px 2px at 200px 160px, #fff, transparent),
+    radial-gradient(1px 1px at 320px 60px, #e9d5ff, transparent),
+    radial-gradient(1px 1px at 400px 220px, #fff, transparent),
+    radial-gradient(2px 2px at 520px 120px, #a5f3fc, transparent),
+    radial-gradient(1px 1px at 640px 300px, #fff, transparent);
+  background-repeat: repeat;
+  background-size: 700px 360px;
+  opacity: 0.5;
+  animation: cintilar 6s ease-in-out infinite alternate;
+}
+
+@keyframes cintilar {
+  from { opacity: 0.35; }
+  to { opacity: 0.6; }
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Container utilitário compartilhado */
+.container {
+  width: 100%;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Botão padrão reutilizável (não é o componente criativo) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: linear-gradient(120deg, var(--cor-primaria), var(--cor-secundaria));
+  color: #06070f;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-glow);
+  filter: brightness(1.08);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda-forte);
+}
+
+.btn-ghost:hover {
+  background: rgba(139, 92, 246, 0.12);
+  box-shadow: none;
+}
+
+/* Animação de entrada reutilizável */
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
