@@ -11,8 +11,6 @@ mapa orbital animado.
 
 ## 👥 Integrantes do grupo
 
-> ⚠️ **Preencha com os dados reais do grupo antes de entregar:**
-
 | Nome | RA |
 |------|----|
 | _Marcos Martins_ | _5162599_ |
