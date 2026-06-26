@@ -15,10 +15,9 @@ mapa orbital animado.
 
 | Nome | RA |
 |------|----|
-| _Integrante 1_ | _RA_ |
-| _Integrante 2_ | _RA_ |
-| _Integrante 3 (opcional)_ | _RA_ |
-| _Integrante 4 (opcional)_ | _RA_ |
+| _Marcos Martins_ | _5162599_ |
+| _Thiago Paes Spirandelli_ | _5162258_ |
+
 
 ---
 
