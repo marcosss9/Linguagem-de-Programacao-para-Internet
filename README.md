@@ -17,7 +17,8 @@ mapa orbital animado.
 |------|----|
 | _Marcos Martins_ | _5162599_ |
 | _Thiago Paes Spirandelli_ | _5162258_ |
-
+| _Pedro Henrique_ | _5162120_ |
+| _Pedro Augusto Rodrigues_ | _5164033_ |
 
 ---
 
